@@ -114,8 +114,8 @@ class WeightedMinHashGenerator(object):
         '''
         if not isinstance(v, collections.Iterable):
             raise TypeError("Input vector must be an iterable")
-        if not len(v) == self.dim:
-            raise ValueError("Input dimension mismatch, expecting %d" % self.dim)
+        # if not len(v) == self.dim:
+            # raise ValueError("Input dimension mismatch, expecting %d" % self.dim)
         if not isinstance(v, np.ndarray):
             v = np.array(v, dtype=np.float32)
         elif v.dtype != np.float32:
