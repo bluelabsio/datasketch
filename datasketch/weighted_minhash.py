@@ -129,6 +129,7 @@ class WeightedMinHashGenerator(object):
         vlog = np.log(v)
         for i in range(self.sample_size):
             t = np.floor((vlog / self.rs[i]) + self.betas[i])
+            print(t)
             ln_y = (t - self.betas[i]) * self.rs[i]
             ln_a = self.ln_cs[i] - ln_y - self.rs[i]
             k = np.nanargmin(ln_a)
