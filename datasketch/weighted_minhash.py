@@ -128,11 +128,19 @@ class WeightedMinHashGenerator(object):
         vlog = np.log(v)
         for i in range(self.sample_size):
             t = np.floor((vlog / self.rs[i]) + self.betas[i])
-            print("This is t vector")
+            print("t value")
             print(t)
             ln_y = (t - self.betas[i]) * self.rs[i]
+            print("ln_y value")
+            print(ln_y)
             ln_a = self.ln_cs[i] - ln_y - self.rs[i]
+            print("ln_a value")
+            print(ln_a)
             k = np.nanargmin(ln_a)
+            print("k value")
+            print(k)
             hashvalues[i][0], hashvalues[i][1] = k, int(t[k])
+            print("hashvalues value")
+            print(hashvalues[i][0], hashvalues[i][1])
         return WeightedMinHash(self.seed, hashvalues)
 
