@@ -125,7 +125,11 @@ class WeightedMinHashGenerator(object):
         if vzeros.all():
             raise ValueError("Input is all zeros")
         v[vzeros] = np.nan
+        print("v vector")
+        print(v)
         vlog = np.log(v)
+        print("vlog")
+        print(vlog)
         for i in range(self.sample_size):
             t = np.floor((vlog / self.rs[i]) + self.betas[i])
             print("t value")
