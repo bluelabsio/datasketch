@@ -123,6 +123,7 @@ class WeightedMinHashGenerator(object):
         hashvalues = np.zeros((self.sample_size, 2), dtype=np.int)
         vzeros = (v == 0)
         if vzeros.all():
+            print(v)
             raise ValueError("Input is all zeros")
         v[vzeros] = np.nan
         # print("v vector")
